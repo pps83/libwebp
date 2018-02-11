@@ -27,7 +27,7 @@ PLATFORM_LDFLAGS = /SAFESEH
 ## Nothing more to do below this line!
 
 NOLOGO     = /nologo
-CCNODBG    = cl.exe $(NOLOGO) /O2 /DNDEBUG
+CCNODBG    = cl.exe $(NOLOGO) /O2 /DNDEBUG /Z7
 CCDEBUG    = cl.exe $(NOLOGO) /Od /Gm /Zi /D_DEBUG /RTC1
 CFLAGS     = /I. /Isrc $(NOLOGO) /W3 /EHsc /c
 CFLAGS     = $(CFLAGS) /DWIN32 /D_CRT_SECURE_NO_WARNINGS /DWIN32_LEAN_AND_MEAN
