@@ -37,5 +37,6 @@ CMakeFiles/
 cmake_install.cmake
 .gradle
 /build
+/build.*
 extras/get_disto
 extras/webp_quality
