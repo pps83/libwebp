@@ -21,7 +21,7 @@
 #include "src/dsp/lossless_common.h"
 #include "src/utils/utils.h"
 
-#define MAX_COST 1.e38
+#define MAX_COSTd 1.e38
 
 // Number of partitions for the three dominant (literal, red and blue) symbol
 // costs.
@@ -399,11 +399,11 @@ typedef struct {
 
 static void DominantCostRangeInit(DominantCostRange* const c) {
   c->literal_max_ = 0.;
-  c->literal_min_ = MAX_COST;
+  c->literal_min_ = MAX_COSTd;
   c->red_max_ = 0.;
-  c->red_min_ = MAX_COST;
+  c->red_min_ = MAX_COSTd;
   c->blue_max_ = 0.;
-  c->blue_min_ = MAX_COST;
+  c->blue_min_ = MAX_COSTd;
 }
 
 static void UpdateDominantCostRange(
@@ -929,7 +929,7 @@ static void HistogramRemap(const VP8LHistogramSet* const in,
   if (out_size > 1) {
     for (i = 0; i < in_size; ++i) {
       int best_out = 0;
-      double best_bits = MAX_COST;
+      double best_bits = MAX_COSTd;
       int k;
       for (k = 0; k < out_size; ++k) {
         const double cur_bits =
